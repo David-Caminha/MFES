@@ -1,0 +1,22 @@
+class CardUtils
+
+values
+	public NumberValues : set of nat1 = {2, ..., 9};
+	public CharValues : set of char = {'T', 'J', 'Q', 'K', 'A'};
+	public CardValues = NumberValues union CharValues;
+	public CardSuits : set of seq1 of char = {"SPADES", "HEARTS", "DIAMONDS", "CLUBS"};
+	
+types
+	public cardValue = nat1 | char
+		inv v == v in set CardValues;
+		
+	public cardSuit = seq1 of char
+		inv s == s in set CardSuits;
+
+operations
+-- TODO Define operations here
+
+functions
+-- TODO Define functiones here    verificação se carta segue outra em numero + se carte é de naipe diferente + etc
+
+end CardUtils

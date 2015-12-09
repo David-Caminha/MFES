@@ -1,0 +1,61 @@
+class BoardUtils
+
+values
+
+types
+	public p1Reserve = CardStack;
+	public p1Waste = CardStack;
+	public p1Hand = CardStack;
+	
+	public p2Reserve = CardStack;
+	public p2Waste = CardStack;
+	public p2Hand = CardStack;
+	
+	public tableau1 = seq of Card
+		inv t == orderedTableau(t);
+	public tableau2 = seq of Card
+		inv t == orderedTableau(t);
+	public tableau3 = seq of Card
+		inv t == orderedTableau(t);
+	public tableau4 = seq of Card
+		inv t == orderedTableau(t);
+	public tableau5 = seq of Card
+		inv t == orderedTableau(t);
+	public tableau6 = seq of Card
+		inv t == orderedTableau(t);
+	public tableau7 = seq of Card
+		inv t == orderedTableau(t);
+	public tableau8 = seq of Card
+		inv t == orderedTableau(t);
+	
+	public foundation1 = seq of Card
+		inv f == orderedFoundation(f);
+	public foundation2 = seq of Card
+		inv f == orderedFoundation(f);
+	public foundation3 = seq of Card
+		inv f == orderedFoundation(f);
+	public foundation4 = seq of Card
+		inv f == orderedFoundation(f);
+	public foundation5 = seq of Card
+		inv f == orderedFoundation(f);
+	public foundation6 = seq of Card
+		inv f == orderedFoundation(f);
+	public foundation7 = seq of Card
+		inv f == orderedFoundation(f);
+	public foundation8 = seq of Card
+		inv f == orderedFoundation(f);
+
+operations
+-- TODO Define operations here
+
+functions
+	public orderedTableau : seq of Card -> bool
+	orderedTableau(t) == (
+	true
+	)
+	pre not exists c: Card & c.value = 'A' and c in set elems t;
+
+traces
+-- TODO Define Combinatorial Test Traces here
+
+end BoardUtils

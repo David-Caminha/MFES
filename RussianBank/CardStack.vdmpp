@@ -1,0 +1,29 @@
+class CardStack
+
+        instance variables
+                private contents : seq of Card := [];
+                private topVisible : bool := true;
+                
+        operations
+                public CardStack: seq of Card * bool ==> CardStack
+                CardStack(cards, b) == (contents := cards; topVisible := b; return self)
+                post contents = cards;
+                
+                public clear: () ==> ()
+                clear() == contents := [];
+                
+                public push: Card ==> ()
+                push(x) == contents := [x] ^ contents
+                post contents = [x] ^ contents~;
+                
+                public pop: () ==> ()
+                pop() == contents := tl contents
+                pre contents <> [] and topVisible = true
+                post contents = tl contents~;
+                
+                public top: () ==> Card
+                top() == return hd contents
+                pre contents <> [] and topVisible = true
+                post RESULT = hd contents;
+                
+end CardStack
