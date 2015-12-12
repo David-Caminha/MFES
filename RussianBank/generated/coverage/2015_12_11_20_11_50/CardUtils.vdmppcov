@@ -51,8 +51,8 @@ functions
 	)
 	pre c1.value <> 'K' and c1 <> c2;
 	
-	public followsInStack : carta * carta -> bool
-	followsInStack(c1, c2) == (
+	public followsInReserve : carta * carta -> bool
+	followsInReserve(c1, c2) == (
 		exists i in set inds valuesOrder &
 		if
 			valuesOrder(i) = c1.value and

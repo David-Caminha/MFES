@@ -1,8 +1,8 @@
 class CardStack
 
         instance variables
-                public contents : seq of CardUtils`carta := [];
-                public topVisible : bool := true;
+                private contents : seq of CardUtils`carta := [];
+                private topVisible : bool := true;
                 
         operations
                 public CardStack: () ==> CardStack

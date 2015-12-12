@@ -36,7 +36,11 @@ operations
 	
 	public remove : CardUtils`carta ==> ()
 	remove(c) == (
-		let i in set inds cards be st c = cards(i) in  cards := cards(1, ..., i-1) ^ cards(i+1, ..., len cards)
+		dcl newCards : seq of CardUtils`carta := [];
+		for x in cards do
+			if x <> c
+			then newCards := newCards ^ [x];
+		cards := newCards;
 	)
 	post not exists x in set elems cards & x = c;
 

@@ -1,8 +1,7 @@
 class Board
 
 types
-	public turn = nat1
-		inv t == t in set {1,2};
+-- TODO Define types here
 
 values
 -- TODO Define values here
@@ -37,16 +36,12 @@ instance variables
 	public tableau6 : BoardUtils`tableau := [];
 	public tableau7 : BoardUtils`tableau := [];
 	public tableau8 : BoardUtils`tableau := [];
-	
-	public selectedCard : CardUtils`carta | bool := false;
-	public playerTurn : turn := 1;
 
 operations
 	public Board : () ==> Board
 	Board() == (
 		dealReserve();
 		dealTableau();
-		dealHand();
 		return self
 	);
 	
@@ -79,54 +74,9 @@ operations
 			(p1Hand.push(p1Deck.dealCard());
 			 p2Hand.push(p2Deck.dealCard()));
 	);
-	
-	public selectCard : CardUtils`carta==> ()
-	selectCard(c) == (
-		if canBeSelected(c, playerTurn)
-		then selectedCard := c
-		else selectedCard := false
-	);
-	
-	public canBeSelected : CardUtils`carta * turn ==> bool
-	canBeSelected(c, t) == (
-		if t = 1
-		then
-			if c = p1Reserve.top() or headOfTableau(c)
-			then return true
-			else return false
-		else
-			if t = 2
-			then
-				if (c = p2Reserve.top() or headOfTableau(c))
-				then return true
-				else return false
-			else return false
-	);
-	
-	public headOfTableau : CardUtils`carta ==> bool
-	headOfTableau(c) == (
-		if (c = hd tableau1 or c = hd tableau2 or c = hd tableau3 or c = hd tableau4 or
-				c = hd tableau5 or c = hd tableau6 or c = hd tableau7 or c = hd tableau8)
-		then return true
-		else return false
-	);
-	
-	public placeCardInStack : CardStack ==> ()
-	placeCardInStack(place) == (
-		if selectedCard = false
-		then return
-		else
-			if CardUtils`followsInStack(place.top(), selectedCard)
-			then (removeFromBoard(selectedCard); place.push(selectedCard))
-			else selectedCard := false
-	);
-	
-	public removeFromBoard : CardUtils`carta ==> ()
-	removeFromBoard(c) == (
-		return
-	)
 
 functions
+-- TODO Define functiones here
 
 traces
 -- TODO Define Combinatorial Test Traces here

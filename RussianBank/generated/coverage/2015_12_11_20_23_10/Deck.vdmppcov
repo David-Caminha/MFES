@@ -28,17 +28,16 @@ operations
 	fillSeq(cardSet) == (
 		let c in set cardSet 
 			in let remain = cardSet \ {c} 
-				in (if remain = {} 
-						then cards := cards ^ [c]
-						else (cards := cards ^ [c]; fillSeq(remain)))
+				in (if remain = {} then cards := cards ^ [c]
+					else cards := cards ^ [c]; fillSeq(remain))
 	)
 	pre cardSet <> {};
 	
 	public remove : CardUtils`carta ==> ()
 	remove(c) == (
-		let i in set inds cards be st c = cards(i) in  cards := cards(1, ..., i-1) ^ cards(i+1, ..., len cards)
-	)
-	post not exists x in set elems cards & x = c;
+		let l1^[c]^l2=cards in cards := l1^l2;
+	);
+
 
 traces
 -- TODO Define Combinatorial Test Traces here

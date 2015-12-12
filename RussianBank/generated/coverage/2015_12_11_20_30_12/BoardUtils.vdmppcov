@@ -14,7 +14,8 @@ functions
 	orderedTableau(t) == (
 	forall i in set (inds t \ {len t}) &
 	CardUtils`followsInTableau(t(i), t(i+1))
-	);
+	)
+	pre not exists c: CardUtils`carta & c.value = 'A' and c in set elems t;
 	
 	public orderedFoundation : seq of CardUtils`carta -> bool
 	orderedFoundation(f) == (

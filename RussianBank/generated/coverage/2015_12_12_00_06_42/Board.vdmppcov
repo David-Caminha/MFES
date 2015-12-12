@@ -1,0 +1,52 @@
+class Board
+
+types
+-- TODO Define types here
+
+values
+-- TODO Define values here
+
+instance variables
+	public p1Deck : Deck := new Deck();
+	public p2Deck : Deck := new Deck();
+	
+	public p1Reserve : CardStack := new CardStack();
+	public p2Reserve : CardStack := new CardStack();
+	
+	public p1Waste : CardStack := new CardStack();
+	public p2Waste : CardStack := new CardStack();
+	
+	public p1Hand : CardStack := new CardStack();
+	public p2Hand : CardStack := new CardStack();
+	
+	public foundation1 : BoardUtils`foundation := [];
+	public foundation2 : BoardUtils`foundation := [];
+	public foundation3 : BoardUtils`foundation := [];
+	public foundation4 : BoardUtils`foundation := [];
+	public foundation5 : BoardUtils`foundation := [];
+	public foundation6 : BoardUtils`foundation := [];
+	public foundation7 : BoardUtils`foundation := [];
+	public foundation8 : BoardUtils`foundation := [];
+	
+	public tableau1 : BoardUtils`tableau := [];
+	public tableau2 : BoardUtils`tableau := [];
+	public tableau3 : BoardUtils`tableau := [];
+	public tableau4 : BoardUtils`tableau := [];
+	public tableau5 : BoardUtils`tableau := [];
+	public tableau6 : BoardUtils`tableau := [];
+	public tableau7 : BoardUtils`tableau := [];
+	public tableau8 : BoardUtils`tableau := [];
+
+operations
+	public Board : () ==> Board
+	Board() == (
+		return self
+	)
+
+functions
+-- TODO Define functiones here
+
+traces
+-- TODO Define Combinatorial Test Traces here
+
+end Board
